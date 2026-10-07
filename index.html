@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Animated Logo</title>
+    <title>Website Under Progress</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Remove default spacing */
+        /* Full Page */
         html,
         body {
             margin: 0;
@@ -20,7 +20,7 @@
             height: 100%;
         }
 
-        /* Full screen container */
+        /* Main Container */
         .logo-container {
             width: 100%;
             height: 100vh;
@@ -30,22 +30,26 @@
             align-items: center;
 
             background-color: #ffffff;
+
             overflow: hidden;
+        }
+
+        /* Content */
+        .logo-content {
+            text-align: center;
         }
 
         /* Logo */
         .animated-logo {
-            width: 420px;
+            width: 220px;
             height: auto;
 
-            /* Zoom animation */
             animation: logoZoom 2.5s ease-in-out infinite;
 
-            /* Prevent blurry rendering where possible */
             transform-origin: center center;
         }
 
-        /* Zoom In / Zoom Out Animation */
+        /* Logo Zoom Animation */
         @keyframes logoZoom {
 
             0% {
@@ -62,52 +66,174 @@
 
         }
 
-        /* Mobile responsive logo */
+        /* Website Under Progress Message */
+        .progress-message {
+            margin-top: 30px;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #333333;
+
+            animation: messageFade 2s ease-in-out infinite;
+        }
+
+        /* Message Animation */
+        @keyframes messageFade {
+
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+
+        }
+
+        /* Small Description */
+        .progress-description {
+            margin-top: 8px;
+
+            font-size: 15px;
+            color: #777777;
+        }
+
+        /* Loading Dots */
+        .loading-dots {
+            margin-top: 15px;
+        }
+
+        .loading-dots span {
+            display: inline-block;
+
+            width: 8px;
+            height: 8px;
+
+            margin: 0 4px;
+
+            background-color: #333333;
+
+            border-radius: 50%;
+
+            animation: dots 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0s;
+        }
+
+        @keyframes dots {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+        }
+
+        /* Mobile */
         @media (max-width: 576px) {
+
             .animated-logo {
                 width: 160px;
             }
+
+            .progress-message {
+                font-size: 19px;
+            }
+
+            .progress-description {
+                font-size: 14px;
+            }
+
         }
     </style>
+
 </head>
 
 <body>
 
-    <!-- Center Logo -->
+    <!-- Main Page -->
     <div class="logo-container">
 
-        <!-- CHANGE ONLY THIS FILE NAME -->
-        <img src="./Education logo.jpeg" alt="Logo" class="animated-logo">
+        <div class="logo-content">
+
+            <!-- ================================= -->
+            <!-- CHANGE YOUR LOGO FILE NAME HERE -->
+            <!-- ================================= -->
+
+            <img src="./Education logo.jpeg" alt="Website Logo" class="animated-logo">
+
+
+            <!-- ================================= -->
+            <!-- WEBSITE UNDER PROGRESS MESSAGE -->
+            <!-- ================================= -->
+
+            <div class="progress-message">
+                Website Under Progress
+            </div>
+
+            <div class="progress-description">
+                We are working hard to bring you something amazing.
+            </div>
+
+
+            <!-- Loading Animation -->
+            <div class="loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <!-- Bootstrap 5 JavaScript -->
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
+
+    <!-- JavaScript -->
     <script>
-        // JavaScript can be used here for additional functionality.
-        // The zoom animation is handled by CSS.
 
         document.addEventListener("DOMContentLoaded", function () {
 
             const logo = document.querySelector(".animated-logo");
 
-            // Make sure the logo is loaded
             logo.addEventListener("load", function () {
                 console.log("Logo loaded successfully.");
             });
 
-            // Handle missing logo
             logo.addEventListener("error", function () {
                 console.error("Logo file could not be loaded.");
             });
 
         });
+
     </script>
 
 </body>
 
 </html>
-```
